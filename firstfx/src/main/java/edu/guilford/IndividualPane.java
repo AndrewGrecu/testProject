@@ -57,7 +57,7 @@ public class IndividualPane extends GridPane {
 
         this.add(rotateButton, 3, 0);
         this.add(slider, 3, 1);
-        
+
         this.add(hideFieldsCheckBox, 3, 3);
 
         this.setStyle("-fx-border-color: black;");
@@ -83,9 +83,12 @@ public class IndividualPane extends GridPane {
             double red = Math.random();
             double green = Math.random();
             double blue = Math.random();
-            nameField.setStyle(String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
-            phoneField.setStyle(String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
-            emailField.setStyle(String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
+            nameField.setStyle(
+                    String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
+            phoneField.setStyle(
+                    String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
+            emailField.setStyle(
+                    String.format("-fx-control-inner-background: rgb(%f,%f,%f);", red * 255, green * 255, blue * 255));
         });
 
         hideFieldsCheckBox.setOnAction(e -> {

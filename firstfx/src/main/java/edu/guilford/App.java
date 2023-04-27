@@ -20,10 +20,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         VBox root = new VBox();
-        //ADD A label to the root node
-        //root.getChildren().add(new Label("Hello World!"));
+        // ADD A label to the root node
+        // root.getChildren().add(new Label("Hello World!"));
         // instaniate an individualPane object and add it to the root node
-        //instantiate a default individual object
+        // instantiate a default individual object
         Individual individual = new Individual();
         root.getChildren().add(new IndividualPane(individual));
         scene = new Scene(root, 640, 480);
@@ -31,14 +31,17 @@ public class App extends Application {
         stage.show();
     }
 
-   /*  static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
-    }
-
-    private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
-        return fxmlLoader.load();
-    } */
+    /*
+     * static void setRoot(String fxml) throws IOException {
+     * scene.setRoot(loadFXML(fxml));
+     * }
+     * 
+     * private static Parent loadFXML(String fxml) throws IOException {
+     * FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml +
+     * ".fxml"));
+     * return fxmlLoader.load();
+     * }
+     */
 
     public static void main(String[] args) {
         launch();
