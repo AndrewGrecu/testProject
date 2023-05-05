@@ -25,8 +25,11 @@ public class Individual {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) throws IllegalArgumentException {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
+        this.name = name.trim();
     }
 
     // getters and setters
@@ -34,7 +37,10 @@ public class Individual {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(String phone) throws IllegalArgumentException {
+        if (!phone.matches("\\d+")) {
+            throw new IllegalArgumentException("Phone number must contain only digits.");
+        }
         this.phone = phone;
     }
 
@@ -43,8 +49,15 @@ public class Individual {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws IllegalArgumentException {
+        if (email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be empty");
+        }
+        // use from https://www.baeldung.com/java-email-validation-regex 
+        if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+        this.email = email.trim();
     }
 
     // toString method
